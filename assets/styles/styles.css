@@ -10,6 +10,9 @@ body {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   font-family: 'Barlow Semi Condensed', Arial, Helvetica, sans-serif;
   font-size: 13px;
   background-color: #ecf2f8;
@@ -27,6 +30,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100%;
   padding: 50px 0;
 }
 
@@ -200,4 +204,44 @@ main {
 
 .last-card p:nth-child(2) {
   color: #48556a;
+}
+
+@media screen and (min-width: 1440px) {
+  main {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: auto;
+    max-width: 1500px;
+    padding: 0;
+  }
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 66%;
+    max-width: 66%;
+  }
+  .cards .card:nth-child(1) {
+    flex-grow: 1;
+    background-position: right 100px top;
+  }
+  .cards .card:nth-child(4) {
+    flex-grow: 1;
+  }
+  .card {
+    margin: 10px;
+    padding-right: 50px;
+    padding-left: 35px;
+    box-shadow: 5px 5px 15px 1px #c7d9ea;
+  }
+  .card p:nth-child(2) {
+    width: initial;
+    font-size: 22px;
+  }
+  .card p:nth-child(3) {
+    width: initial;
+    font-size: 16px;
+  }
+  .last-card {
+    align-self: stretch;
+  }
 }
